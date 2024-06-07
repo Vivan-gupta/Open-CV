@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Upload</title>
+    <link rel="stylesheet" href="C:\Users\acer\Desktop\openCV\style\style.css">
+    <link rel="stylesheet" href="C:\Users\acer\Desktop\openCV\style\navbar.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-logo">VISIONARY</div>
+        <ul class="nav-links">
+            <li><a href="C:\Users\acer\Desktop\openCV\index.html">Home</a></li>
+            <li><a href="C:\Users\acer\Desktop\openCV\pages\workFlow.html">WorkFlow</a></li>
+            <li><a href="C:\Users\acer\Desktop\openCV\pages\knownPersons.html">KnownPerson</a></li>
+            <li><a href="C:\Users\acer\Desktop\openCV\pages\unKnownPersons.html">UnknownPerson</a></li>
+        </ul>
+    </nav>
+    
+
+    <div class="upload-container">
+        <div class="image-section">
+            <video autoplay loop muted playsinline>
+                <source src="./assests/videos/Spec.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="form-section">
+            <form action="/upload" method="post" enctype="multipart/form-data" class="upload-form" id="upload-form">
+                <div class="form-group">
+                    <label for="imageName" class="form-label">Image Name (optional):</label>
+                    <input type="text" id="imageName" name="imageName" class="form-input" placeholder="Enter image name">
+                </div>
+                <div class="drag-area">
+                    <input type="file" name="myImage" accept="image/*" class="file-input" multiple>
+                    <p>Drag or drop images here</p>
+                    <span>or</span>
+                    <label for="file-upload" class="custom-file-upload">Choose a file</label>
+                    <input id="file-upload" type="file" name="myImage" accept="image/*" hidden>
+                    <span>JPG, PNG, JPEG, WEBP, BMP - Max size 5Mb</span>
+                    <span>*All files are stored privately & encrypted. Only you will see them.</span>
+                </div>
+                <button type="submit" class="upload-button">Upload</button>
+                <div class="samples">
+                    <p>Upload the Images of person you Know</p>
+                    <div class="sample-images">
+                        <!-- Thumbnail images go here -->
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div id="uploadModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modal-text">Your file has been uploaded successfully!</p>
+        </div>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+</html>
